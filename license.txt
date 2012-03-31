@@ -1,4 +1,4 @@
-Licence of the Toolbox_skeleton
+Licence of the Xcos_Toolbox_skeleton
 
 Please update this file with the license terms (Copy and paste the license agreement).
 Note that all the files of the toolbox_skeleton are released into the public domain.

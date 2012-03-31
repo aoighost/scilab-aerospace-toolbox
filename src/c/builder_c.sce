@@ -3,19 +3,41 @@
 // This macro compiles the files
 
 function builder_c()
-
   src_c_path = get_absolute_file_path("builder_c.sce");
 
   CFLAGS = ilib_include_flag(src_c_path);
+  LDFLAGS = "";
+  if (getos()<>"Windows") then
+    if ~isdir(SCI+"/../../share") then
+      // Source version
+      CFLAGS = CFLAGS + " -I" + SCI + "/modules/scicos_blocks/includes" ;
+      CFLAGS = CFLAGS + " -I" + SCI + "/modules/scicos/includes" ;
+    else
+      // Release version
+      CFLAGS = CFLAGS + " -I" + SCI + "/../../include/scilab/scicos_blocks";
+      CFLAGS = CFLAGS + " -I" + SCI + "/../../include/scilab/scicos";
+    end
+  else
+    CFLAGS = CFLAGS + " -I" + SCI + "/modules/scicos_blocks/includes";
+    CFLAGS = CFLAGS + " -I" + SCI + "/modules/scicos/includes";
 
-  tbx_build_src(["csum","csub","multiplybypi"],       ..
-                ["csum.c","csub.c","multiplybypi.c"], ..
-                "c",                ..
-                src_c_path,         ..
-                "",                 ..
-                "",                 ..
-                CFLAGS);
-                
+    // Getting symbols
+    if findmsvccompiler() <> "unknown" & haveacompiler() then
+      LDFLAGS = LDFLAGS + " """ + SCI + "/bin/scicos.lib""";
+      LDFLAGS = LDFLAGS + " """ + SCI + "/bin/scicos_f.lib""";
+    end
+  end
+
+  tbx_build_src(["block_sum", "business_sum"],        ..
+                ["block_sum.c", "business_sum.c"],    ..
+                "c",                                  ..
+                src_c_path,                           ..
+                "",                                   ..
+                LDFLAGS,                              ..
+                CFLAGS,                               ..
+                "",                                   ..
+                "",                                   ..
+                "xcos_tbx_skel");
 endfunction
 
 builder_c();

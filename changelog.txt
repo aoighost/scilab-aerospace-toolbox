@@ -1,13 +1,6 @@
-changelog of the toolbox_skeleton
+changelog of the Xcos toolbox skeleton
 
-Please update this file to describe the modifications of your toolbox
-
-A format of change log could be:
-
-
-toolbox_skeleton (version)
-    * Change 1 
-    * Change 2
-    * ...
- -- Author <author@email.com>  Tue, 18 Dec 2007 14:50:02 +0100
+xcos_toolbox_skeleton (1.0)
+    * Default implementation
+ -- Clément DAVID <clement.david@scilab.org> Tue, 15 Mar 2011 13:34:06 +0100
 
