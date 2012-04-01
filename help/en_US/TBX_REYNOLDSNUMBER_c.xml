@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<refentry xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svg="http://www.w3.org/2000/svg" xmlns:ns5="http://www.w3.org/1999/xhtml" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:db="http://docbook.org/ns/docbook" version="5.0-subset Scilab" xml:id="TBX_REYNOLDSNUMBER_c">
+  <refnamediv>
+    <refname>TBX_REYNOLDSNUMBER_c</refname>
+    <refpurpose>Reynolds number with 3 inputs and 1 output.</refpurpose>
+  </refnamediv>
+  <refsection>
+    <title>Block Screenshot</title>
+    <para>
+      <inlinemediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="../../images/gif/TBX_REYNOLDSNUMBER_c.gif" valign="middle"/>
+        </imageobject>
+      </inlinemediaobject>
+    </para>
+  </refsection>
+  <refsection id="Contents_TBX_REYNOLDSNUMBER_c">
+    <title>Contents</title>
+    <itemizedlist>
+      <listitem>
+        <para>
+          <link linkend="TBX_REYNOLDSNUMBER_c">TBX_REYNOLDSNUMBER_c block</link>
+        </para>
+      </listitem>
+      <listitem>
+        <itemizedlist>
+          <listitem>
+            <para>
+              <xref linkend="Description_TBX_REYNOLDSNUMBER_c">Description</xref>
+            </para>
+          </listitem>
+          <listitem>
+            <para>
+              <xref linkend="Interfacingfunction_TBX_REYNOLDSNUMBER_c">Interfacing function</xref>
+            </para>
+          </listitem>
+          <listitem>
+            <para>
+              <xref linkend="Computationalfunction_TBX_REYNOLDSNUMBER_c">Computational function</xref>
+            </para>
+          </listitem>
+          <listitem>
+            <para>
+              <xref linkend="SeeAlso_TBX_REYNOLDSNUMBER_c">See also</xref>
+            </para>
+          </listitem>
+        </itemizedlist>
+      </listitem>
+    </itemizedlist>
+  </refsection>
+  <refsection id="Description_TBX_REYNOLDSNUMBER_c">
+    <title>Description</title>
+    <para>Get the Reynolds number of the three inputs.</para>
+  </refsection>
+  <refsection id="Interfacingfunction_TBX_REYNOLDSNUMBER_c">
+    <title>Interfacing function</title>
+    <itemizedlist>
+      <listitem>
+        <para>macros/TBX_REYNOLDSNUMBER_c.sci</para>
+      </listitem>
+    </itemizedlist>
+  </refsection>
+  <refsection id="Computationalfunction_TBX_REYNOLDSNUMBER_c">
+    <title>Computational function</title>
+    <itemizedlist>
+      <listitem>
+        <para>src/c/block_reynoldsnumber.c</para>
+      </listitem>
+    </itemizedlist>
+  </refsection>
+  <refsection id="SeeAlso_TBX_REYNOLDSNUMBER_c">
+    <title>See Also</title>
+    <simplelist type="inline">
+      <member>
+        <link linkend="TBX_REYNOLDSNUMBER_c">TBX_REYNOLDSNUMBER_c</link> : corresponding scilab functionnality
+      </member>
+      <member>
+        <link type="scilab" linkend="scilab.help/reynoldsnumber">Link to the Scilab help page</link>
+      </member>
+      <member>
+        <link type="scilab" linkend="scilab.help/ABS_VALUE">Link to an Xcos help page</link>
+      </member>
+    </simplelist>
+  </refsection>
+</refentry>

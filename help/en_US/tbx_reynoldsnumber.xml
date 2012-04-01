@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<refentry xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svg="http://www.w3.org/2000/svg" xmlns:ns5="http://www.w3.org/1999/xhtml" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:db="http://docbook.org/ns/docbook" version="5.0-subset Scilab" xml:id="tbx_reynoldsnumber">
+  <refnamediv>
+    <refname>tbx_reynoldsnumber</refname>
+    <refpurpose>Reynolds number with 3 inputs and 1 output</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv>
+    <title>Calling Sequence</title>
+    <synopsis>
+      out = tbx_reynoldsnumber(in1, in2, in3);
+    </synopsis>
+  </refsynopsisdiv>
+  <refsection id="Module_tbx_reynoldsnumber">
+    <title>Module</title>
+    <itemizedlist>
+      <listitem>
+        <para>
+          <link linkend="tbx_reynoldsnumber">tbx_reynoldsnumber</link>
+        </para>
+      </listitem>
+    </itemizedlist>
+  </refsection>
+  <refsection id="Parameters_tbx_reynoldsnumber">
+    <title>Arguments</title>
+    <itemizedlist>
+      <listitem>
+        <para><emphasis role="bold">in1 : </emphasis> Velocity (a double).</para>
+      </listitem>
+      <listitem>
+        <para><emphasis role="bold">in2 : </emphasis> Length scale (a double).</para>
+      </listitem>
+      <listitem>
+        <para><emphasis role="bold">in3 : </emphasis> kinematic viscosity (a double).</para>
+      </listitem>
+      <listitem>
+        <para><emphasis role="bold">out : </emphasis> a double with value:</para>
+        <para>
+          <latex>out=(in1*in2)/in3</latex>
+        </para>
+      </listitem>
+    </itemizedlist>
+  </refsection>
+  <refsection id="SeeAlso_tbx_reynoldsnumber">
+    <title>See Also</title>
+    <simplelist type="inline">
+      <member><link linkend="TBX_REYNOLDSNUMBER_c">TBX_REYNOLDSNUMBER_c</link> : corresponding <link type="scilab" linkend="scilab.help/xcos">Xcos</link> block.
+      </member>
+      <member>
+        <link type="scilab" linkend="scilab.help/reynoldsnumber">Link to the Scilab help page</link>
+      </member>
+    </simplelist>
+  </refsection>
+</refentry>
