@@ -1,16 +1,21 @@
-/* ==================================================================== */
-/* Allan CORNET */
-/* DIGITEO 2009 */
-/* Template toolbox_skeleton */
-/* This file is released under the 3-clause BSD license. See COPYING-BSD. */
-/* ==================================================================== */
+/*
+ *  Scilab ( http://www.scilab.org/ ) - This file is part of Scilab
+ *  Copyright (C) 2011-2011 - DIGITEO - Clément DAVID
+ *
+ *  This file must be used under the terms of the CeCILL.
+ *  This source file is licensed as described in the file COPYING, which
+ *  you should have received as part of this distribution.  The terms
+ *  are also available at
+ *  http://www.cecill.info/licences/Licence_CeCILL_V2-en.txt
+ *
+ */
+
+#include "aerospaec.h"
+
 #include "api_scilab.h"
 #include "Scierror.h"
-#include "MALLOC.h"
-#include "csum.h"
-/* ==================================================================== */
-int sci_csum(char *fname)
-{
+
+int sci_tbx_reynoldsnumber(char *fname) {
   SciErr sciErr;
   
   int *piAddressVarOne = NULL;
@@ -19,15 +24,17 @@ int sci_csum(char *fname)
   int *piAddressVarTwo = NULL;
   double dVarTwo = 0.0;
   
+  int *piAddressVarThree = NULL;
+  double dVarThree = 0.0;
+    
   double dOut = 0.0;
-
-  /* --> result = csum(3,8)
-  /* check that we have only 2 input arguments */
-  /* check that we have only 1 output argument */
-  CheckRhs(2,2) ;
-  CheckLhs(1,1) ;   
   
-  /* get Address of inputs */
+  /* check that we have only 3 input arguments */
+  /* check that we have only 1 output argument */
+  CheckRhs(3,3);
+  CheckLhs(1,1);
+  
+    /* get Address of inputs */
   sciErr = getVarAddressFromPosition(pvApiCtx, 1, &piAddressVarOne);
   if(sciErr.iErr)
   {
@@ -36,6 +43,13 @@ int sci_csum(char *fname)
   }
   
   sciErr = getVarAddressFromPosition(pvApiCtx, 2, &piAddressVarTwo);
+  if(sciErr.iErr)
+  {
+    printError(&sciErr, 0);
+    return 0;
+  }
+    
+  sciErr = getVarAddressFromPosition(pvApiCtx, 3, &piAddressVarThree);
   if(sciErr.iErr)
   {
     printError(&sciErr, 0);
@@ -54,6 +68,12 @@ int sci_csum(char *fname)
     Scierror(999,"%s: Wrong type for input argument #%d: A scalar expected.\n", fname, 2);
     return 0;
   }
+  
+  if ( !isDoubleType(pvApiCtx, piAddressVarThree) )
+  {
+    Scierror(999,"%s: Wrong type for input argument #%d: A scalar expected.\n", fname, 3);
+    return 0;
+  }
 
   if ( getScalarDouble(pvApiCtx, piAddressVarOne, &dVarOne) )
   {
@@ -67,22 +87,17 @@ int sci_csum(char *fname)
     return 0;
   }
   
-  /* call c function csum */
-  csum(&dVarOne, &dVarTwo, &dOut);
+  if ( getScalarDouble(pvApiCtx, piAddressVarThree, &dVarThree) )
+  {
+    Scierror(999,"%s: Wrong size for input argument #%d: A scalar expected.\n", fname, 2);
+    return 0;
+  }
+  
+  /* call c business function */  
+  dOut = aerospace_reynoldsnumber(dVarOne, dVarTwo, dVarThree);
   
   /* create result on stack */
   createScalarDouble(pvApiCtx, Rhs + 1, dOut);
-  
   LhsVar(1) = Rhs + 1; 
-  
-  /* This function put on scilab stack, the lhs variable
-  which are at the position lhs(i) on calling stack */
-  /* You need to add PutLhsVar here because WITHOUT_ADD_PUTLHSVAR 
-  was defined and equal to %t */
-  /* without this, you do not need to add PutLhsVar here */
-  PutLhsVar();
-  
-  return 0;
 }
-/* ==================================================================== */
 

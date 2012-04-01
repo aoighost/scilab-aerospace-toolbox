@@ -17,7 +17,7 @@
 #include "call_scilab.h" /* Provide functions to call Scilab engine */
 
 
-void block_reynolds_number(scicos_block* block, scicos_flag flag) {
+void block_reynoldsnumber(scicos_block* block, scicos_flag flag) {
     double* y;
     double* u1;
     double* u2;

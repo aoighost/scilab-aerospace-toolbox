@@ -16,9 +16,9 @@
  * @param in2 Length scale
  * @param in3 kinematic viscosity
  * 
- * Re = (in * in2 * in3/in4) / (in5 * d^2V/dx^2)
+ * Re = (in1*in2)/in3
  * 
  * 
  */
-double reynolds_number(double in, double in2, double in3);
+double aerospace_reynoldsnumber(double in, double in2, double in3);
 

@@ -10,7 +10,7 @@
  *
  */
 
-double reynolds_number(double in, double in2, double in3) {
+double aerospace_reynoldsnumber(double in, double in2, double in3) {
     return (in * in2) / in3;
 }
 

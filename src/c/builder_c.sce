@@ -39,8 +39,8 @@ function builder_c()
                 "",                                   ..
                 "xcos_tbx_aerospace");
 
-  tbx_build_src(["block_sum", "business_sum"],        ..
-                ["block_sum.c", "business_sum.c"],    ..
+  tbx_build_src(["block_reynoldsnumber", "aerospace_reynoldsnumber"],        ..
+                ["block_reynoldsnumber.c", "aerospace_reynoldsnumber.c"],    ..
                 "c",                                  ..
                 src_c_path,                           ..
                 "",                                   ..
