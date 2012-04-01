@@ -37,7 +37,7 @@ function builder_c()
                 CFLAGS,                               ..
                 "",                                   ..
                 "",                                   ..
-                "xcos_tbx_aerospace");
+                "xcos_aerospace_tbx");
 endfunction
 
 builder_c();

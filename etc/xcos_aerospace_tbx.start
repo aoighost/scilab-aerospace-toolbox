@@ -2,11 +2,11 @@
 
 // This file is released under the 3-clause BSD license. See COPYING-BSD.
 
-function xcos_toolbox_aerospacelib = startModule()
+function xcos_aerospace_tbxlib = startModule()
 
   mprintf("Start Xcos aerospace toolbox\n");
 
-  if isdef("xcos_toolbox_aerospacelib") then
+  if isdef("xcos_aerospace_tbxlib") then
     warning("Xcos toolbox aerospace library is already loaded");
     return;
   end
@@ -21,7 +21,7 @@ function xcos_toolbox_aerospacelib = startModule()
 // force to load some libraries (dependancies)
   loadScicos();
 // =============================================================================
-  etc_tlbx  = get_absolute_file_path("xcos_toolbox_aerospace.start");
+  etc_tlbx  = get_absolute_file_path("xcos_aerospace_tbx.start");
   etc_tlbx  = getshortpathname(etc_tlbx);
   root_tlbx = strncpy( etc_tlbx, length(etc_tlbx)-length("\etc\") );
 
@@ -29,7 +29,7 @@ function xcos_toolbox_aerospacelib = startModule()
 // =============================================================================
   mprintf("\tLoad macros\n");
   pathmacros = pathconvert( root_tlbx ) + "macros" + filesep();
-  xcos_skeletonlib = lib(pathmacros);
+  xcos_aerospace_tbxlib = lib(pathmacros);
 
 // Add blocks to the Xcos palette
 // =============================================================================
@@ -45,7 +45,7 @@ function xcos_toolbox_aerospacelib = startModule()
   end
 
   if ~xcosPalAdd(pal) then
-    error(msprintf(gettext("%s: Unable to export %s.\n"), "xcos_toolbox_aerospace.start", "pal"));
+    error(msprintf(gettext("%s: Unable to export %s.\n"), "xcos_aerospace_tbx.start", "pal"));
   end
 
 // Load simulation functions
@@ -78,13 +78,13 @@ function xcos_toolbox_aerospacelib = startModule()
 // =============================================================================
   if or(getscilabmode() == ["NW";"STD"]) then
     mprintf("\tLoad demos\n");
-    pathdemos = pathconvert(root_tlbx+"/demos/xcos_toolbox_aerospace.dem.gateway.sce", %F, %T);
+    pathdemos = pathconvert(root_tlbx+"/demos/xcos_aerospace_tbx.dem.gateway.sce", %F, %T);
     add_demo("Xcos aerospace toolbox", pathdemos);
   end
 
 endfunction
 
 if with_module('xcos') then
-  xcos_skeletonlib = startModule();
+  xcos_aerospace_tbxlib = startModule();
   clear startModule; // remove startModule on stack
 end

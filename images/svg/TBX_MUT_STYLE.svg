@@ -29,6 +29,6 @@ CreationDate: Fri Sep 23 19:49:47 2011
 <polyline fill="none" stroke="#000000" stroke-width="0.5" points="0,13.6 0.400002,13.4667 0,13.3333"/>
 <polygon fill="#000000" points="0.400002,26.5333 0,26.4 0,26.6667"/>
 <polyline fill="none" stroke="#000000" stroke-width="0.5" points="0,26.6667 0.400002,26.5333 0,26.4"/>
-<text fill="#000000" style="stroke:none" x="8" y="22" transform="rotate(0, 8, 22)" font-size="6" font-family="SansSerif" font-style="normal" font-weight="normal">TBX_SUM_c</text>
+<text fill="#000000" style="stroke:none" x="8" y="22" transform="rotate(0, 8, 22)" font-size="6" font-family="SansSerif" font-style="normal" font-weight="normal">TBX_REYNOLDSNUMBER_c</text>
 </g>
 </svg>

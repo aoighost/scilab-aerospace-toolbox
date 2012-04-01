@@ -8,7 +8,7 @@ lines(0);
 
 function main_builder()
 
-  TOOLBOX_NAME  = "xcos_aerospace_toolbox";
+  TOOLBOX_NAME  = "xcos_aerospace_tbx";
   TOOLBOX_TITLE = "Xcos Aerospace Toolbox";
   toolbox_dir   = get_absolute_file_path("builder.sce");
 

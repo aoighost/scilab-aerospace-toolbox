@@ -4,11 +4,11 @@ function builder_gw_c()
 
   includes_src_c = ilib_include_flag(get_absolute_file_path("builder_gateway_c.sce") + "../../src/c");
 
-  tbx_build_gateway("xcos_toolbox_aerospace_c",                        ..
+  tbx_build_gateway("xcos_aerospace_tbx_c",                        ..
                     ["tbx_reynoldsnumber", "sci_tbx_reynoldsnumber"],                       ..
                     ["sci_tbx_reynoldsnumber.c"],                                ..
                     get_absolute_file_path("builder_gateway_c.sce"),  ..
-                    ["../../src/c/libxcos_tbx_skel"],                 ..
+                    ["../../src/c/libxcos_aerospace_tbx"],                 ..
                     "",                                               ..
                     includes_src_c);
 

@@ -4,7 +4,7 @@
 
 function subdemolist = demo_gateway()
 
-  demopath = get_absolute_file_path("xcos_toolbox_aerospace.dem.gateway.sce");
+  demopath = get_absolute_file_path("xcos_aerospace_tbx.dem.gateway.sce");
   subdemolist = []; // add demos here
   subdemolist(:,2) = demopath + subdemolist(:,2);
  

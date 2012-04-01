@@ -30,7 +30,7 @@ void block_reynoldsnumber(scicos_block* block, scicos_flag flag) {
         u3 = (double *) block->inptr[2];
         
         // call reynolds layer
-        *y = reynolds_number(*u1, *u2, *u3);
+        *y = aerospace_reynoldsnumber(*u1, *u2, *u3);
     }
 }
 
