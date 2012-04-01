@@ -49,7 +49,7 @@ function [x,y,typ]=TBX_MUT_STYLE(job,arg1,arg2)
     model.dep_ut=[%f %f]
 
     exprs=string([]);
-    gr_i=['txt=[''TBX_SUM_c''];';
+    gr_i=['txt=[''TBX_REYNOLDSNUMBER_c''];';
           'xstringb(orig(1),orig(2),txt,sz(1),sz(2),''fill'')']
 
     x=standard_define([2 2],model,exprs,gr_i)
