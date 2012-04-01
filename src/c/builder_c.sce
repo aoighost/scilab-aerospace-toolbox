@@ -28,17 +28,6 @@ function builder_c()
     end
   end
 
-  tbx_build_src(["block_sum", "business_sum"],        ..
-                ["block_sum.c", "business_sum.c"],    ..
-                "c",                                  ..
-                src_c_path,                           ..
-                "",                                   ..
-                LDFLAGS,                              ..
-                CFLAGS,                               ..
-                "",                                   ..
-                "",                                   ..
-                "xcos_tbx_aerospace");
-
   tbx_build_src(["block_reynoldsnumber", "aerospace_reynoldsnumber"],        ..
                 ["block_reynoldsnumber.c", "aerospace_reynoldsnumber.c"],    ..
                 "c",                                  ..
