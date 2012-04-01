@@ -13,9 +13,6 @@
 #include <aerospace.h>
 #include <scicos_block4.h>
 
-#include "stack-c.h" /* Provide functions to access to the memory of Scilab */
-#include "call_scilab.h" /* Provide functions to call Scilab engine */
-
 
 void block_reynoldsnumber(scicos_block* block, scicos_flag flag) {
     double* y;

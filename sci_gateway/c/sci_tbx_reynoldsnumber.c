@@ -10,7 +10,7 @@
  *
  */
 
-#include "aerospaec.h"
+#include "aerospace.h"
 
 #include "api_scilab.h"
 #include "Scierror.h"
