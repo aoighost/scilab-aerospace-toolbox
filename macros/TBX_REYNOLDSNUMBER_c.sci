@@ -20,7 +20,7 @@ function [x,y,typ]=TBX_REYNOLDSNUMBER_c(job,arg1,arg2)
     // no parameters yet
    case 'define' then
     model=scicos_model()
-    model.sim=list('block_reynolds_number',5)
+    model.sim=list('block_reynolds_number',4)
     // two inputs with a single "double" element
     model.in=[1;1;1]
     model.intyp=[1;1;1]
@@ -33,9 +33,9 @@ function [x,y,typ]=TBX_REYNOLDSNUMBER_c(job,arg1,arg2)
 
     exprs=string([]);
     gr_i=['txt=[''TBX_REYNOLDSNUMBER_c''];';
-          'xstringb(orig(1),orig(3),txt,sz(1),sz(3),''fill'')']
+          'xstringb(orig(1),orig(2),txt,sz(1),sz(2),''fill'')']
 
-    x=standard_define([3 3],model,exprs,gr_i)
+    x=standard_define([2 2],model,exprs,gr_i)
   end
 endfunction
 

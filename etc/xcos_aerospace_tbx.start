@@ -34,7 +34,7 @@ function xcos_aerospace_tbxlib = startModule()
 // Add blocks to the Xcos palette
 // =============================================================================
   mprintf("\tLoad palette\n");
-  pal = xcosPal("Xcos toolbox blocks");
+  pal = xcosPal("Aerospace Toolbox");
 
   h5Files = gsort(ls(root_tlbx + "/images/h5/*.h5"));
   gifFiles = gsort(ls(root_tlbx + "/images/gif/*." + ["png" "jpg" "gif"]));

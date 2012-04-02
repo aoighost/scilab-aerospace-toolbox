@@ -37,9 +37,9 @@ function [x,y,typ]=TBX_MUT_STYLE(job,arg1,arg2)
 
    case 'define' then
     model=scicos_model()
-    model.sim=list('block_reynoldsnumber',3)
+    model.sim=list('block_reynoldsnumber',4)
     // n inputs with a single "double" element
-    model.in=ones(3, 1);
+    model.in=ones(6, 1);
     model.intyp=ones(model.in);
     // one output with a single "double" element
     model.out=1
@@ -50,9 +50,9 @@ function [x,y,typ]=TBX_MUT_STYLE(job,arg1,arg2)
 
     exprs=string([]);
     gr_i=['txt=[''TBX_REYNOLDSNUMBER_c''];';
-          'xstringb(orig(1),orig(2),orig(3),txt,sz(1),sz(2),sz(3),''fill'')']
+          'xstringb(orig(1),orig(2),txt,sz(1),sz(2),''fill'')']
 
-    x=standard_define([3 3],model,exprs,gr_i)
+    x=standard_define([2 2],model,exprs,gr_i)
   end
 endfunction
 
